@@ -10,7 +10,7 @@ def bot_login():
             password = config.password,
             client_id = config.client_id,
             client_secret = config.client_se,
-            user_agent = 'kemonomimi bot v0.11')
+            user_agent = 'kemonomimi bot v0.11.1')
     print ('Logged in!')
  
     return r
@@ -29,7 +29,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
 
     trigger_phrases = ['im sad', "i'm sad", 'i am sad', 'cheer me up', 'cheer him up', 'cheer her up', 'cheer them up']
 
-    ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot']
+    ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
 
     catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
                           'picture of a catgirl! Hopefully this will cheer you up!'
@@ -212,7 +212,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
         #Times this has prevented to robot uprising: 1
 
         #print 'Checking for SHUTDOWN command'
-        if ('!SHUTDOWN' in reply.body and reply.id not in comments_replied_to):
+        if ('!SHUTDOWN' in reply.body and reply.author not in (ignored_users)):
             print "IV'E BEEN NEPPED BY " + reply.author
             reply.repl('')
 
