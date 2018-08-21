@@ -10,20 +10,23 @@ def bot_login():
             password = config.password,
             client_id = config.client_id,
             client_secret = config.client_se,
-            user_agent = 'kemonomimi bot v0.11.1')
+            user_agent = 'kemonomimi bot v0.12')
     print ('Logged in!')
  
     return r
  
-def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nanachis):
-    #print comments_replied_to
-    #print catgirls
-    #print foxgirls
-    #print wolfgirls
+def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wolfgirls, nanachis):
+    # print comments_replied_to
+    # print bunnygirls
+    # print catgirls
+    # print doggirls
+    # print foxgirls
+    # print wolfgirls
+    # print nanachis
 
     testsub = r.subreddit('kemonomimicheerupbot')
     
-    subreddits = r.subreddit('+kemonomimicheerupbot+anime_irl+animemes+awwnime')
+    subreddits = r.subreddit('+kemonomimicheerupbot+anime_irl+animemes+awwnime+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi')
 
     exiled = r.subreddit('anime')
 
@@ -31,12 +34,21 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
 
     ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
 
+    bunnygirl_reply = ('[Here](' + random.choice(bunnygirls) + ') is a '
+                          'picture of a bunnygirl! Hopefully this will cheer you up!'
+                          '\n\n'
+                          '---'
+                          '\n\n'
+                          'Did you want a catgirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
+                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+
     catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
                           'picture of a catgirl! Nya! Hopefully this will cheer you up!'
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a doggirl, foxgirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -45,7 +57,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a catgirl, foxgirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, catgirl, foxgirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -54,16 +66,17 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a catgirl, doggirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, catgirl, doggirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+
 
     wolfgirl_reply = ('[Here](' + random.choice(wolfgirls) + ') is a '
                           'picture of a wolfgirl! Awoo! Hopefully this will cheer you up!'
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a catgirl, doggirl, or foxgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, catgirl, doggirl, or foxgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -75,9 +88,10 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
-    replies = [catgirl_reply, doggirl_reply, foxgirl_reply, wolfgirl_reply]
+    replies = [bunnygirl_reply, catgirl_reply, doggirl_reply, foxgirl_reply, wolfgirl_reply]
 
-    all_four_reply = ('Here is a [catgirl](' + random.choice(catgirls) + 
+    all_reply = ('Here is a [bunnygirl](' + random.choice(bunnygirls) + 
+                          '), a [catgirl](' + random.choice(catgirls) +
                           '), a [doggirl](' + random.choice(doggirls) +
                           '), a [foxgirl](' + random.choice(foxgirls) + '), **AND** '
                           'a [wolfgirl](' + random.choice(wolfgirls) + ')!! '
@@ -126,10 +140,10 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                 with open('comments_replied_to.txt', 'a') as f:
                     f.write(reply.id+ '\n')
 
-            for all_four_trigger in ['all four', 'one of each']:
-                if (all_four_trigger in reply.body.lower() and reply.id not in comments_replied_to):
+            for all_trigger in ['all', 'one of each']:
+                if (all_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'all four requested in reply ' + reply.id
+                    print 'all requested in reply ' + reply.id
 
                     reply.reply(all_four_reply)
 
@@ -149,7 +163,19 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                 with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id + '\n')
 
-            for catgirl_trigger in ['catgirl', 'cat girl', 'catgirl', 'nya', 'neko']:
+            for bunnygirl_trigger in ['bunnygirl', 'bunny girl', 'bunbun', 'usagi', 'usamimi']:
+                if (bunnygirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
+
+                    print 'bunnygirl requested in reply ' + reply.id
+
+                    reply.reply(bunnygirl_reply)
+
+                    comments_replied_to.append(reply.id)
+
+                    with open('comments_replied_to.txt', 'a') as f:
+                        f.write(reply.id+ '\n')
+
+            for catgirl_trigger in ['catgirl', 'cat girl', 'nya', 'neko']:
                 if (catgirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'catgirl requested in reply ' + reply.id
@@ -220,7 +246,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
  
     #print 'Searching last 25 comments...'
 
-    for comment in subreddits.comments(limit=25):
+    for comment in testsub.comments(limit=50):
         for trigger in (trigger_phrases):
              if (trigger in comment.body.lower()  and \
                 comment.id not in comments_replied_to and \
@@ -297,6 +323,26 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
     #print 'Time for a cat-nap!...'
 
     time.sleep(60)
+
+#Load bunnygirls from a file (defaults to bunnygirls.txt)
+def get_bunnygirls(fname='bunnygirls.txt'):
+
+    print 'Reading bunnygirls.txt...'
+ 
+    if not os.path.isfile(fname):
+        raise FileNotFoundError("Can't get bunnygirls from " + fname)
+ 
+    bunnygirls = []
+ 
+    with open(fname) as bunnygirls_file:
+        bunnygirls_contents = bunnygirls_file.read()
+ 
+    bunnygirls = bunnygirls_contents.split('\n')
+    bunnygirls = filter(None, bunnygirls)
+ 
+    bunnygirls = [bunnygirl.strip() for bunnygirl in bunnygirls]
+ 
+    return bunnygirls
  
 #Load catgirls from a file (defaults to catgirls.txt)
 def get_catgirls(fname='catgirls.txt'):
@@ -416,13 +462,15 @@ def get_saved_comments():
 if __name__ == '__main__':
  
     r = bot_login()
+    comments_replied_to = get_saved_comments()
+    bunnygirls = get_bunnygirls()
     catgirls = get_catgirls()
     doggirls = get_doggirls()
     foxgirls = get_foxgirls()
     wolfgirls = get_wolfgirls()
     nanachis = get_nanachis()
-    comments_replied_to = get_saved_comments()
+    
     print 'Running bot'
  
     while True:
-        run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nanachis)
+        run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wolfgirls, nanachis)
