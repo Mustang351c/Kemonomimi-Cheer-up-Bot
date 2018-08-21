@@ -32,7 +32,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
     ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
 
     catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
-                          'picture of a catgirl! Hopefully this will cheer you up!'
+                          'picture of a catgirl! Nya! Hopefully this will cheer you up!'
                           '\n\n'
                           '---'
                           '\n\n'
@@ -41,7 +41,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
     doggirl_reply = ('[Here](' + random.choice(doggirls) + ') is a '
-                          'picture of a doggirl! Hopefully this will cheer you up!'
+                          'picture of a doggirl! Wan Wan! Hopefully this will cheer you up!'
                           '\n\n'
                           '---'
                           '\n\n'
@@ -161,7 +161,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for doggirl_trigger in ['doggirl', 'dog girl', 'inu']:
+            for doggirl_trigger in ['doggirl', 'dog girl', 'inu', 'wanwan', 'wan wan']:
                 if (doggirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'doggirl requested in reply ' + reply.id
@@ -185,7 +185,7 @@ def run_bot(r, comments_replied_to, catgirls, doggirls, foxgirls, wolfgirls, nan
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for wolfgirl_trigger in ['wolfgirl', 'wolf girl', 'awoo', 'wan wan', 'wanwan', 'ookami']:
+            for wolfgirl_trigger in ['wolfgirl', 'wolf girl', 'awoo', 'ookami']:
                 if (wolfgirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'wolfgirl requested in reply ' + reply.id
