@@ -10,7 +10,7 @@ def bot_login():
             password = config.password,
             client_id = config.client_id,
             client_secret = config.client_se,
-            user_agent = 'kemonomimi bot v0.12')
+            user_agent = 'kemonomimi bot v0.12.1')
     print ('Logged in!')
  
     return r
@@ -39,12 +39,22 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                           '\n\n'
                           '---'
                           '\n\n'
+                          'Want an endless supply of kemonomimi girls? '
+                          'We have them [here](https://discord.gg/GtETtcW)'
+                          '\n\n'
+                          '---'
+                          '\n\n'
                           'Did you want a catgirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
     catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
                           'picture of a catgirl! Nya! Hopefully this will cheer you up!'
+                          '\n\n'
+                          '---'
+                          '\n\n'
+                          'Want an endless supply of kemonomimi girls? '
+                          'We have them [here](https://discord.gg/GtETtcW)'
                           '\n\n'
                           '---'
                           '\n\n'
@@ -57,12 +67,22 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                           '\n\n'
                           '---'
                           '\n\n'
+                          'Want an endless supply of kemonomimi girls? '
+                          'We have them [here](https://discord.gg/GtETtcW)'
+                          '\n\n'
+                          '---'
+                          '\n\n'
                           'Did you want a bunnygirl, catgirl, foxgirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
     foxgirl_reply = ('[Here](' + random.choice(foxgirls) + ') is a '
                           'picture of a foxgirl! Hopefully this will cheer you up!'
+                          '\n\n'
+                          '---'
+                          '\n\n'
+                          'Want an endless supply of kemonomimi girls? '
+                          'We have them [here](https://discord.gg/GtETtcW)'
                           '\n\n'
                           '---'
                           '\n\n'
@@ -73,6 +93,11 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
 
     wolfgirl_reply = ('[Here](' + random.choice(wolfgirls) + ') is a '
                           'picture of a wolfgirl! Awoo! Hopefully this will cheer you up!'
+                          '\n\n'
+                          '---'
+                          '\n\n'
+                          'Want an endless supply of kemonomimi girls? '
+                          'We have them [here](https://discord.gg/GtETtcW)'
                           '\n\n'
                           '---'
                           '\n\n'
