@@ -10,7 +10,7 @@ def bot_login():
             password = config.password,
             client_id = config.client_id,
             client_secret = config.client_se,
-            user_agent = 'kemonomimi bot v0.12.1')
+            user_agent = 'kemonomimi bot v0.12.2')
     print ('Logged in!')
  
     return r
@@ -121,16 +121,6 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                           '), a [foxgirl](' + random.choice(foxgirls) + '), **AND** '
                           'a [wolfgirl](' + random.choice(wolfgirls) + ')!! '
                           'Hopefully this will cheer you up more!')
-
-
-    #Patiently awaiting the return of u/xenonauts...
-    xenonauts_reply = ('[Here](https://i.imgur.com/RcrLkpe.jpg) is a '
-                          'picture of a catgirl Sagiri! Hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
 #checks inbox replies for trigger phrases
 
@@ -261,6 +251,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
 
         #This is to allow a shutdown when necessary.
         #Times this has prevented to robot uprising: 1
+        #Times it has been abused by assholes: 2
 
         #print 'Checking for SHUTDOWN command'
         if ('!SHUTDOWN' in reply.body and reply.author not in (ignored_users)):
@@ -276,30 +267,17 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
              if (trigger in comment.body.lower()  and \
                 comment.id not in comments_replied_to and \
                 comment.author not in (ignored_users)):
-
-                    if comment.author != ('xenonauts'):
  
-                        #print 'Im sad found in comment' + comment.id
+                    #print 'Im sad found in comment' + comment.id
 
-                        comment.reply(random.choice(replies))
+                    comment.reply(random.choice(replies))
 
-                        print 'replied to comment ' + comment.id
+                    print 'replied to comment ' + comment.id
 
-                        comments_replied_to.append(comment.id)
-             
-                        with open('comments_replied_to.txt', 'a') as f:
-                            f.write(comment.id + '\n')
-
-                    if comment.author == ('xenonauts'):
-
-                        comment.reply(xenonauts_reply)
-
-                        print "Replied to xenonauts' comment " + comment.id
-     
-                        comments_replied_to.append(comment.id)
-             
-                        with open('comments_replied_to.txt', 'a') as f:
-                            f.write(comment.id + '\n')
+                    comments_replied_to.append(comment.id)
+         
+                    with open('comments_replied_to.txt', 'a') as f:
+                        f.write(comment.id + '\n')
 
 #checks r/nanachi for triggers and replies with nanachis
 
@@ -328,17 +306,10 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                 mention.id not in comments_replied_to and \
                 mention.author not in (ignored_users)):
 
-                    if mention.author != ('xenonauts'):
 
-                        mention.reply(random.choice(replies))
+                    mention.reply(random.choice(replies))
 
-                        print 'Replied to mention ' + mention.id
-
-                    if mention.author == ('xenonauts'):
-
-                        mention.reply(xenonauts_reply)
-
-                        print "Replied to xenonauts' mention " + mention.id
+                    print 'Replied to mention ' + mention.id
 
                     comments_replied_to.append(mention.id)
 
