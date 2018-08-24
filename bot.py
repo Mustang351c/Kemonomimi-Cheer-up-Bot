@@ -10,7 +10,7 @@ def bot_login():
             password = config.password,
             client_id = config.client_id,
             client_secret = config.client_se,
-            user_agent = 'kemonomimi bot v0.12.2')
+            user_agent = 'kemonomimi bot v0.12.3')
     print ('Logged in!')
  
     return r
@@ -77,7 +77,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
     foxgirl_reply = ('[Here](' + random.choice(foxgirls) + ') is a '
-                          'picture of a foxgirl! Hopefully this will cheer you up!'
+                          'picture of a foxgirl! Kon Kon! Hopefully this will cheer you up!'
                           '\n\n'
                           '---'
                           '\n\n'
@@ -214,7 +214,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for foxgirl_trigger in ['foxgirl', 'fox girl', 'kitsune']:
+            for foxgirl_trigger in ['foxgirl', 'fox girl', 'kitsune', 'kon kon']:
                 if (foxgirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'foxgirl requested in reply ' + reply.id
