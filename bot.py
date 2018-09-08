@@ -160,7 +160,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
 
                     print 'all requested in reply ' + reply.id
 
-                    reply.reply(all_four_reply)
+                    reply.reply(all_reply)
 
                     comments_replied_to.append(reply.id)
 
@@ -262,7 +262,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
  
     #print 'Searching last 25 comments...'
 
-    for comment in testsub.comments(limit=50):
+    for comment in subreddits.comments(limit=50):
         for trigger in (trigger_phrases):
              if (trigger in comment.body.lower()  and \
                 comment.id not in comments_replied_to and \
