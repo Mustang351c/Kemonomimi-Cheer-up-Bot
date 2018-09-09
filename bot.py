@@ -178,7 +178,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                 with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id + '\n')
 
-            for bunnygirl_trigger in ['bunnygirl', 'bunny girl', 'bunbun', 'usagi', 'usamimi']:
+            for bunnygirl_trigger in ['bunnygirl', 'bunny girl', 'bunbun', 'bunny', 'bunnies', 'usagi', 'usamimi']:
                 if (bunnygirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'bunnygirl requested in reply ' + reply.id
