@@ -11,7 +11,7 @@ def bot_login():
             client_id = config.client_id,
             client_secret = config.client_se,
             user_agent = 'kemonomimi bot v0.12.3')
-    print ('Logged in!')
+    print 'Logged in!'
  
     return r
  
@@ -131,30 +131,6 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
 
             #print reply.body.lower()
 
-            if ('good bot' in reply.body.lower() and reply.id not in comments_replied_to):
-
-                #print 'Good bot found in reply ' + reply.id
-
-                reply.reply('[Thank You! :)](https://i.imgur.com/P3GRavv.gifv)')
-
-                print 'thanked reply ' + reply.id
-
-                comments_replied_to.append(reply.id)
-
-                with open('comments_replied_to.txt', 'a') as f:
-                    f.write(reply.id+ '\n')
-
-            if ('bad bot' in reply.body.lower() and reply.id not in comments_replied_to):
-
-                print 'TRASH WAIFU FOUND!!'
-
-                reply.reply('[Your waifu](https://www.merriam-webster.com/dictionary/trash)')
-
-                comments_replied_to.append(reply.id)
-
-                with open('comments_replied_to.txt', 'a') as f:
-                    f.write(reply.id+ '\n')
-
             for all_trigger in ['all', 'one of each']:
                 if (all_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
@@ -238,7 +214,31 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            if ('waifu' in reply.body.lower() and reply.id not in comments_replied_to):
+            if ('good bot' in reply.body.lower() and reply.id not in comments_replied_to):
+
+                #print 'Good bot found in reply ' + reply.id
+
+                reply.reply('[Thank You! :)](https://i.imgur.com/P3GRavv.gifv)')
+
+                print 'thanked reply ' + reply.id
+
+                comments_replied_to.append(reply.id)
+
+                with open('comments_replied_to.txt', 'a') as f:
+                    f.write(reply.id+ '\n')
+
+            if ('bad bot' in reply.body.lower() and reply.id not in comments_replied_to):
+
+                print 'TRASH WAIFU FOUND!!'
+
+                reply.reply('[Your waifu](https://www.merriam-webster.com/dictionary/trash)')
+
+                comments_replied_to.append(reply.id)
+
+                with open('comments_replied_to.txt', 'a') as f:
+                    f.write(reply.id+ '\n')
+
+            if ('your waifu' in reply.body.lower() and reply.id not in comments_replied_to):
 
                 reply.reply('[Fixed Artillery-San](https://i.imgur.com/lAoLNQY.jpg)')
 
