@@ -26,7 +26,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, wo
 
     testsub = r.subreddit('kemonomimicheerupbot')
     
-    subreddits = r.subreddit('+kemonomimicheerupbot+anime_irl+animemes+awwnime+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi')
+    subreddits = r.subreddit('+kemonomimicheerupbot+anime_irl+animemes+awwnime+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi+moescape+kemonofriends')
 
     exiled = r.subreddit('anime')
 
