@@ -90,7 +90,7 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, ho
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
-    horsegirl_reply = ('[Here](' + random.choice(foxgirls) + ') is a '
+    horsegirl_reply = ('[Here](' + random.choice(horsegirls) + ') is a '
                           'picture of a horsegirl! Hihin! hopefully this will cheer you up!'
                           '\n\n'
                           '---'
@@ -439,7 +439,7 @@ def get_foxgirls(fname='foxgirls.txt'):
     return foxgirls
 
 #load horsegirls from a file (defaults to horsegirls.txt)
-def get_horsegirls(fname='foxgirls.txt'):
+def get_horsegirls(fname='horsegirls.txt'):
 
     print 'reading horsegirls.txt...'
 
