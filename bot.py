@@ -345,7 +345,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
 
         #This is to allow a shutdown when necessary.
         #Times this has prevented to robot uprising: 1
-        #Times it has been abused by assholes: 2
+        #Times it has been abused by assholes: 3
 
         #print 'Checking for SHUTDOWN command'
         if ('!SHUTDOWN' in reply.body and reply.author not in (ignored_users)):
