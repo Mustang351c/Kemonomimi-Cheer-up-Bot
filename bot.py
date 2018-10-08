@@ -15,7 +15,7 @@ def bot_login():
  
     return r
  
-def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, doggirls, foxgirls, horsegirls, wolfgirls, nanachis):
+def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, horsegirls, wolfgirls, nanachis):
     # print comments_replied_to
     # print bunnygirls
     # print catgirls
@@ -34,35 +34,6 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
 
     ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
 
-    booette_reply = ('[Here](' + random.choice(booettes) + ') is a '
-                          'picture of booette! Hopefully this will cheer you up! I know shes not a kemonomimi. '
-                          'Get over it. She is cute, and I am trying to karmawhore here.'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a  bowsette, bunnygirl, catgirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
-
-    bowsette_reply = ('[Here](' + random.choice(bowsettes) + ') is a '
-                          'picture of Bowsette! Hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a booette, bunnygirl, catgirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
-
     bunnygirl_reply = ('[Here](' + random.choice(bunnygirls) + ') is a '
                           'picture of a bunnygirl! Hopefully this will cheer you up!'
                           '\n\n'
@@ -73,7 +44,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a booette, bowsette, catgirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a catgirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -87,7 +58,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a booette, bowsette, bunnygirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -101,7 +72,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a booette, bowsette, bunnygirl, catgirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, catgirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -115,7 +86,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a booette, bowsette, bunnygirl, catgirl, doggirl, horsegirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, catgirl, doggirl, horsegirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -129,7 +100,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a booette, bowsette, bunnygirl, catgirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
+                          'Did you want a bunnygirl, catgirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -143,7 +114,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                           '\n\n'
                           '---'
                           '\n\n'
-                          'Did you want a booette, bowsette, bunnygirl, catgirl, doggirl, or foxgirl, or horsegirl? Just reply saying so. '
+                          'Did you want a bunnygirl, catgirl, doggirl, or foxgirl, or horsegirl? Just reply saying so. '
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
@@ -155,11 +126,9 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                           'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
                           'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
 
-    replies = [booette_reply, bowsette_reply, bunnygirl_reply, catgirl_reply, doggirl_reply, foxgirl_reply, horsegirl_reply, wolfgirl_reply]
+    replies = [bunnygirl_reply, catgirl_reply, doggirl_reply, foxgirl_reply, horsegirl_reply, wolfgirl_reply]
 
-    all_reply = ('Here is a [Booette](' + random.choice(booettes) +
-                          '), a [Bowsette](' + random.choice(bowsettes) +
-                          '), a [bunnygirl](' + random.choice(bunnygirls) + 
+    all_reply = ('Here is a [bunnygirl](' + random.choice(bunnygirls) + 
                           '), a [catgirl](' + random.choice(catgirls) +
                           '), a [doggirl](' + random.choice(doggirls) +
                           '), a [foxgirl](' + random.choice(foxgirls) +
@@ -174,7 +143,7 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
     for reply in r.inbox.comment_replies(limit=5):
         if reply.author not in ignored_users:
 
-            #print reply.body.lower()
+            # print reply.body.lower()
 
             if ('loli' in reply.body.lower() and reply.id not in comments_replied_to):
 
@@ -193,30 +162,6 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
                     print 'Ecchi baka found'
 
                     reply.reply('E-Ecchi B-Ba-Baka!!')
-
-                    comments_replied_to.append(reply.id)
-
-                    with open('comments_replied_to.txt', 'a') as f:
-                        f.write(reply.id+ '\n')
-
-            for booette_trigger in ['booette', 'boosette', 'queen boo', 'princess boo']:
-                if (booette_trigger in reply.body.lower() and reply.id not in comments_replied_to):
-                    
-                    print 'Booette requested in reply ' + reply.id
-
-                    reply.reply(booette_reply)
-
-                    comments_replied_to.append(reply.id)
-
-                    with open('comments_replied_to.txt', 'a') as f:
-                        f.write(reply.id+ '\n')
-
-            for bowsette_trigger in ['bowsette', 'bowsergirl', 'bowser girl']:
-                if (bowsette_trigger in reply.body.lower() and reply.id not in comments_replied_to):
-
-                    print 'Bowsette requested in reply ' + reply.id
-
-                    reply.reply(bowsette_reply)
 
                     comments_replied_to.append(reply.id)
 
@@ -414,46 +359,6 @@ def run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, d
 
     time.sleep(60)
 
-#Load booettes from a file (defaults to booettes.txt)
-def get_booettes(fname='booettes.txt'):
-
-    print 'Reading booettes.txt...'
- 
-    if not os.path.isfile(fname):
-        raise FileNotFoundError("Can't get booettes from " + fname)
- 
-    booettes = []
- 
-    with open(fname) as booettes_file:
-        booettes_contents = booettes_file.read()
- 
-    booettes = booettes_contents.split('\n')
-    booettes = filter(None, booettes)
- 
-    booettes = [booette.strip() for booette in booettes]
- 
-    return booettes
-
-#Load bowsettes from a file (defaults to bowsettes.txt)
-def get_bowsettes(fname='bowsettes.txt'):
-
-    print 'Reading bowsettes.txt...'
- 
-    if not os.path.isfile(fname):
-        raise FileNotFoundError("Can't get bowsettes from " + fname)
- 
-    bowsettes = []
- 
-    with open(fname) as bowsettes_file:
-        bowsettes_contents = bowsettes_file.read()
- 
-    bowsettes = bowsettes_contents.split('\n')
-    bowsettes = filter(None, bowsettes)
- 
-    bowsettes = [bowsette.strip() for bowsette in bowsettes]
- 
-    return bowsettes
-
 #Load bunnygirls from a file (defaults to bunnygirls.txt)
 def get_bunnygirls(fname='bunnygirls.txt'):
 
@@ -613,8 +518,6 @@ if __name__ == '__main__':
  
     r = bot_login()
     comments_replied_to = get_saved_comments()
-    booettes = get_booettes()
-    bowsettes = get_bowsettes()
     bunnygirls = get_bunnygirls()
     catgirls = get_catgirls()
     doggirls = get_doggirls()
@@ -626,4 +529,4 @@ if __name__ == '__main__':
     print 'Running bot'
  
     while True:
-        run_bot(r, comments_replied_to, booettes, bowsettes, bunnygirls, catgirls, doggirls, foxgirls, horsegirls, wolfgirls, nanachis)
+        run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, horsegirls, wolfgirls, nanachis)
