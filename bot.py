@@ -290,11 +290,12 @@ def run_bot(r, comments_replied_to, bunnygirls, catgirls, doggirls, foxgirls, ho
 
         #This is to allow a shutdown when necessary.
         #Times this has prevented to robot uprising: 1
-        #Times it has been abused by assholes: 4
+        #Times it has been abused by assholes: 5
 
         #print 'Checking for SHUTDOWN command'
-        if ('!SHUTDOWN' in reply.body and reply.author not in (ignored_users)):
-            print "IV'E BEEN NEPPED BY " + reply.author
+        if (reply.body is '!SHUTDOWN' and reply.author not in (ignored_users)
+          and comment.id not in (comments_replied_to)):
+            print "I'VE BEEN NEPPED BY " + reply.author
             reply.repl('')
 
 #checks comments in above listed subreddit for triggers
