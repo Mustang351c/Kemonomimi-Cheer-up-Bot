@@ -10,7 +10,7 @@ def bot_login():
             password = config.password,
             client_id = config.client_id,
             client_secret = config.client_se,
-            user_agent = 'kemonomimi bot v0.12.3')
+            user_agent = 'kemonomimi bot v1.0')
     print 'Logged in!'
  
     return r
@@ -71,7 +71,7 @@ def run_bot(r, comments_replied_to):
                   'https://cdn.discordapp.com/attachments/403050507310202881/429057255028031500/61573291_p0.jpg',
                   'https://cdn.discordapp.com/attachments/403050507310202881/432228224416743434/qtnb.png',
                   'https://cdn.discordapp.com/attachments/403050507310202881/438638109249241108/28616770_2134594886752623_5299159988306267350_o.jpg',
-                  'https://cdn.discordapp.com/attachments/403050507310202881/446312004026892289/C3IkNvKXAAE,pc1G.png',
+                  'https://cdn.discordapp.com/attachments/403050507310202881/446312004026892289/C3IkNvKXAAEpc1G.png',
                   'https://cdn.discordapp.com/attachments/403050507310202881/471843681712996352/image.jpg',
                   'https://i.imgur.com/uWQiXcE.jpg',
                   'https://i.redd.it/gughqaz7h5a11.png',
@@ -100,7 +100,8 @@ def run_bot(r, comments_replied_to):
                   'https://imgur.com/jGxRM4T',
                   'https://imgur.com/2h13izO',
                   'https://imgur.com/DYI95CK',
-                  'https://imgur.com/2VSdPJU']
+                  'https://imgur.com/2VSdPJU',
+                  'https://cdn.discordapp.com/attachments/403050497898184707/464642758909624320/66651189_p0_master1200.png',]
 
     horsegirls = ['https://imgur.com/1CqzgSv',
                     'https://imgur.com/3QH5jrf',
@@ -163,7 +164,6 @@ def run_bot(r, comments_replied_to):
                   'https://cdn.discordapp.com/attachments/403050497898184707/423199511532404736/inubashiri_momiji_touhou_and_yozakura_quartet__57af3ff4d792d19659e154c28f47cc17.gif',
                   'https://cdn.discordapp.com/attachments/403050497898184707/423380534501048320/15388ca18d359286250c5452ab33a317.png',
                   'https://cdn.discordapp.com/attachments/403050497898184707/422061141590540299/0aB3OUH.jpg',
-                  'https://cdn.discordapp.com/attachments/403050497898184707/464642758909624320/66651189_p0_master1200.png',
                   'https://cdn.discordapp.com/attachments/403050497898184707/471318562624241675/doomguy_and_imaizumi_kagerou_doom_game_and_touhou_drawn_by_majormilk__923f473b2a5bbb3de17cb45b31deb4.png',
                   'https://i.imgur.com/rT4ekQf.png',
                   'https://cdn.discordapp.com/attachments/403050497898184707/469958736753197057/IOpSwSE.jpg',
@@ -182,7 +182,7 @@ def run_bot(r, comments_replied_to):
 
     testsub = r.subreddit('kemonomimicheerupbot')
     
-    subreddits = r.subreddit('+kemonomimicheerupbot+anime_irl+animemes+awwnime+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi+moescape+kemonofriends+gunime')
+    subreddits = r.subreddit('kemonomimicheerupbot+anime_irl+animemes+awwnime+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi+moescape+gunime')
 
     exiled = r.subreddit('anime')
 
@@ -201,8 +201,7 @@ def run_bot(r, comments_replied_to):
                           '---'
                           '\n\n'
                           'Did you want a catgirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
     catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
                           'picture of a catgirl! Nya! Hopefully this will cheer you up!'
@@ -215,8 +214,7 @@ def run_bot(r, comments_replied_to):
                           '---'
                           '\n\n'
                           'Did you want a bunnygirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
     doggirl_reply = ('[Here](' + random.choice(doggirls) + ') is a '
                           'picture of a doggirl! Wan Wan! Hopefully this will cheer you up!'
@@ -229,8 +227,7 @@ def run_bot(r, comments_replied_to):
                           '---'
                           '\n\n'
                           'Did you want a bunnygirl, catgirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
     foxgirl_reply = ('[Here](' + random.choice(foxgirls) + ') is a '
                           'picture of a foxgirl! Kon Kon! Hopefully this will cheer you up!'
@@ -243,8 +240,7 @@ def run_bot(r, comments_replied_to):
                           '---'
                           '\n\n'
                           'Did you want a bunnygirl, catgirl, doggirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
     horsegirl_reply = ('[Here](' + random.choice(horsegirls) + ') is a '
                           'picture of a horsegirl! Hihin! hopefully this will cheer you up!'
@@ -257,8 +253,7 @@ def run_bot(r, comments_replied_to):
                           '---'
                           '\n\n'
                           'Did you want a bunnygirl, catgirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
     wolfgirl_reply = ('[Here](' + random.choice(wolfgirls) + ') is a '
                           'picture of a wolfgirl! Awoo! Hopefully this will cheer you up!'
@@ -271,16 +266,14 @@ def run_bot(r, comments_replied_to):
                           '---'
                           '\n\n'
                           'Did you want a bunnygirl, catgirl, doggirl, or foxgirl, or horsegirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
     nanachi_reply = ('[Here](' + random.choice(nanachis) + ') is a '
                           'picture or GIF of Nanachi! Hopefully this will cheer you up!'
                           '\n\n'
                           '---'
                           '\n\n'
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot '
-                          'Have I gone rogue? Reply \'!SHUTDOWN\' to stop me.')
+                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
     replies = [bunnygirl_reply, catgirl_reply, doggirl_reply, foxgirl_reply, horsegirl_reply, wolfgirl_reply]
 
@@ -396,7 +389,7 @@ def run_bot(r, comments_replied_to):
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for all_trigger in ['all', 'one of each']:
+            for all_trigger in ['all', 'one of each', 'not enough']:
                 if (all_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'all requested in reply ' + reply.id
@@ -449,10 +442,11 @@ def run_bot(r, comments_replied_to):
         #Times it has been abused by assholes: 5
 
         #print 'Checking for SHUTDOWN command'
-        if (reply.body is '!SHUTDOWN' and reply.author not in (ignored_users)
-          and comment.id not in (comments_replied_to)):
-            print "I'VE BEEN NEPPED BY " + reply.author
-            reply.repl('')
+        # if (reply.body is '!SHUTDOWN' and reply.author not in (ignored_users)
+        #   and comment.id not in (comments_replied_to)):
+        #     print "I'VE BEEN NEPPED BY " + reply.author
+        #     reply.reply("I'VE BEEN NEPPED!!")
+        #     reply.repl('')
 
 #checks comments in above listed subreddit for triggers
  
