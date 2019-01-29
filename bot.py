@@ -141,7 +141,7 @@ def run_bot(r, comments_replied_to):
                   'https://imgur.com/J0ZHuja',
                   'https://cdn.discordapp.com/attachments/403050532740005891/412624561226514432/g41_girls_frontline_drawn_by_marmoset_marmoset0__598c2fc6dddaf5d0358314f5aea30bce.jpg',
                   'https://cdn.discordapp.com/attachments/403050532740005891/417119208128643082/eaa3b8ea85328ff4458211f9e620ed50.png',
-                  'https://cdn.discordapp.com/attachments/403050532740005891/417187924119912448/VxGXzkMuD.png'
+                  'https://cdn.discordapp.com/attachments/403050532740005891/417187924119912448/VxGXzkMuD.png',
                   'https://cdn.discordapp.com/attachments/403050532740005891/425442989637107722/c92aab218a5e4eec2c618c8f4d045a3a.png',
                   'https://i.imgur.com/mYjHNYp.png',
                   'https://cdn.discordapp.com/attachments/403050532740005891/462705692986310671/IMG_20180630_203717.jpg',
@@ -317,6 +317,18 @@ def run_bot(r, comments_replied_to):
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
+            for all_trigger in ['all', 'one of each', 'not enough']:
+                if (all_trigger in reply.body.lower() and reply.id not in comments_replied_to):
+
+                    print 'all requested in reply ' + reply.id
+
+                    reply.reply(all_reply)
+
+                    comments_replied_to.append(reply.id)
+
+                    with open('comments_replied_to.txt', 'a') as f:
+                        f.write(reply.id + '\n')
+
             for bunnygirl_trigger in ['bunnygirl', 'bunny girl', 'bunbun', 'bunny', 'bunnies', 'usagi', 'usamimi']:
                 if (bunnygirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
@@ -388,18 +400,6 @@ def run_bot(r, comments_replied_to):
 
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
-
-            for all_trigger in ['all', 'one of each', 'not enough']:
-                if (all_trigger in reply.body.lower() and reply.id not in comments_replied_to):
-
-                    print 'all requested in reply ' + reply.id
-
-                    reply.reply(all_reply)
-
-                    comments_replied_to.append(reply.id)
-
-                    with open('comments_replied_to.txt', 'a') as f:
-                        f.write(reply.id + '\n')
 
             if ('good bot' in reply.body.lower() and reply.id not in comments_replied_to):
 
