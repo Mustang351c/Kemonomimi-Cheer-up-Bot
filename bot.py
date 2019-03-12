@@ -42,8 +42,7 @@ def run_bot(r, comments_replied_to):
                   'https://imgur.com/RWBmr6v',
                   'https://imgur.com/GXjtsas',
                   'https://imgur.com/VjpeXyt',
-                  'https://imgur.com/PzYkyTS',
-                  'https://imgur.com/OE6gsOO']
+                  'https://imgur.com/PzYkyTS']
 
     catgirls = ['https://imgur.com/RGHKirG',
                   'https://imgur.com/4A8CrDC',
@@ -191,7 +190,7 @@ def run_bot(r, comments_replied_to):
     ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
 
     bunnygirl_reply = ('[Here](' + random.choice(bunnygirls) + ') is a '
-                          'picture of a bunnygirl! Hopefully this will cheer you up!'
+                          'picture of a bunnygirl! Pyon! Hopefully this will cheer you up!'
                           '\n\n'
                           '---'
                           '\n\n'
@@ -378,7 +377,7 @@ def run_bot(r, comments_replied_to):
                         f.write(reply.id+ '\n')
 
             for horsegirl_trigger in ['horsegirl', 'horse girl', 'uma', 'hinin']:
-                if (horsegirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
+                if (horsegirl_trigger in reply.body.lower() and 'human' not in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'horsegirl requested in reply ' + reply.id
 
