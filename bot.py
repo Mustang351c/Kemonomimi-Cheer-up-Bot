@@ -1,5 +1,6 @@
 import praw
 import config
+import replies
 import random
 import os
 import time
@@ -15,119 +16,47 @@ def bot_login():
     print 'Logged in!'
  
     return r
- 
-def run_bot(r, comments_replied_to,
-		bunnygirls = config.bunnygirls,
-		catgirls = config.catgirls,
-		doggirls = config.doggirls,
-		foxgirls = config.foxgirls,
-		horsegirls = config.horsegirls,
-		wolfgirls = config.wolfgirls):
-    # print comments_replied_to
-    # print bunnygirls
-    # print catgirls
-    # print doggirls
-    # print foxgirls
-    # print horsegirls
-    # print wolfgirls
 
-##defines things for later. just wanted to keep the working part of the code cleaner.
+def run_bot(r, bunnygirls = replies.bunnygirls,
+		catgirls = replies.catgirls,
+		doggirls = replies.doggirls,
+		foxgirls = replies.foxgirls,
+		horsegirls = replies.horsegirls,
+		wolfgirls = replies.wolfgirls,
+		bunnygirl_reply = replies.bunnygirl_reply,
+		catgirl_reply = replies.catgirl_reply,
+		doggirl_reply = replies.doggirl_reply,
+		foxgirl_reply = replies.foxgirl_reply,
+		horsegirl_reply = replies.horsegirl_reply,
+		wolfgirl_reply = replies.wolfgirl_reply,
+		replies = replies.replies,
+		all_reply = replies.all_reply):
+	# print comments_replied_to
+	# print bunnygirls
+	# print catgirls
+	# print doggirls
+	# print foxgirls
+	# print horsegirls
+	# print wolfgirls
+	# print bunnygirl_reply
+	# print catgirl_reply
+	# print doggirl_reply
+	# print foxgirl_reply
+	# print horsegirl_reply
+	# print wolfgirl_reply
+	# print replies
+	# print all_reply
+
+
+##defines things for later.
     
-    subreddits = r.subreddit('kemonomimicheerupbot+anime_irl+animemes+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi+moescape+gunime')
+	subreddits = r.subreddit('kemonomimicheerupbot+anime_irl+animemes+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi+moescape+gunime')
 
-    exiled = r.subreddit('anime')
+	exiled = r.subreddit('anime')
 
-    trigger_phrases = ['im sad', 'im so sad', "i'm sad", "i'm so sad", 'i am sad', 'i am so sad', 'cheer me up', 'cheer him up', 'cheer her up', 'cheer them up']
+	trigger_phrases = ['im sad', 'im so sad', "i'm sad", "i'm so sad", 'i am sad', 'i am so sad', 'cheer me up', 'cheer him up', 'cheer her up', 'cheer them up']
 
-    ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
-
-    bunnygirl_reply = ('[Here](' + random.choice(bunnygirls) + ') is a '
-                          'picture of a bunnygirl! Pyon! Hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a catgirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
-
-    catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
-                          'picture of a catgirl! Nya! Hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a bunnygirl, doggirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
-
-    doggirl_reply = ('[Here](' + random.choice(doggirls) + ') is a '
-                          'picture of a doggirl! Wan Wan! Hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a bunnygirl, catgirl, foxgirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
-
-    foxgirl_reply = ('[Here](' + random.choice(foxgirls) + ') is a '
-                          'picture of a foxgirl! Kon Kon! Hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a bunnygirl, catgirl, doggirl, horsegirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
-
-    horsegirl_reply = ('[Here](' + random.choice(horsegirls) + ') is a '
-                          'picture of a horsegirl! Hihin! hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a bunnygirl, catgirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
-
-    wolfgirl_reply = ('[Here](' + random.choice(wolfgirls) + ') is a '
-                          'picture of a wolfgirl! Awoo! Hopefully this will cheer you up!'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Want an endless supply of kemonomimi girls? '
-                          'We have them [here](https://discord.gg/GtETtcW)'
-                          '\n\n'
-                          '---'
-                          '\n\n'
-                          'Did you want a bunnygirl, catgirl, doggirl, or foxgirl, or horsegirl? Just reply saying so. '
-                          'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
-
-    replies = [bunnygirl_reply, catgirl_reply, doggirl_reply, foxgirl_reply, horsegirl_reply, wolfgirl_reply]
-
-    all_reply = ('Here is a [bunnygirl](' + random.choice(bunnygirls) + 
-                          '), a [catgirl](' + random.choice(catgirls) +
-                          '), a [doggirl](' + random.choice(doggirls) +
-                          '), a [foxgirl](' + random.choice(foxgirls) +
-                          '), a [horsegirl](' + random.choice(horsegirls) + '), **AND** '
-                          'a [wolfgirl](' + random.choice(wolfgirls) + ')!! '
-                          'Hopefully this will cheer you up more!')
+	ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
 
 ##checks inbox replies for trigger phrases
 
