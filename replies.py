@@ -221,6 +221,18 @@ horsegirl_reply = ('[Here](' + random.choice(horsegirls) + ') is a '
                       'Did you want a bunnygirl, catgirl, doggirl, foxgirl, or wolfgirl? Just reply saying so. '
                       'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
+humangirl_reply = ('What kind of heretic are you? Kemonomimi are clearly superior to humans!'
+                      '\n\n'
+                      '---'
+                      '\n\n'
+                      'Want an endless supply of kemonomimi girls? '
+                      'We have them [here](https://discord.gg/GtETtcW)'
+                      '\n\n'
+                      '---'
+                      '\n\n'
+                      'Did you want an actual kemonomimi girl? Just reply saying so. '
+                      'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
+
 wolfgirl_reply = ('[Here](' + random.choice(wolfgirls) + ') is a '
                       'picture of a wolfgirl! Awoo! Hopefully this will cheer you up!'
                       '\n\n'
