@@ -22,13 +22,14 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 		doggirls = replies.doggirls,
 		foxgirls = replies.foxgirls,
 		horsegirls = replies.horsegirls,
+        raccoongirls = replies.raccoongirls,
 		wolfgirls = replies.wolfgirls,
 		bunnygirl_reply = replies.bunnygirl_reply,
 		catgirl_reply = replies.catgirl_reply,
 		doggirl_reply = replies.doggirl_reply,
 		foxgirl_reply = replies.foxgirl_reply,
 		horsegirl_reply = replies.horsegirl_reply,
-        humangirl_reply = replies.humangirl_reply,
+        raccoongirl_reply = replies.raccoongirl_reply,
 		wolfgirl_reply = replies.wolfgirl_reply,
 		replies = replies.replies,
 		all_reply = replies.all_reply):
@@ -38,6 +39,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 	# print doggirls
 	# print foxgirls
 	# print horsegirls
+    # print racoongirls
 	# print wolfgirls
 	# print bunnygirl_reply
 	# print catgirl_reply
@@ -96,7 +98,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
             for all_trigger in ['all ', 'one of each', 'not enough']:
                 if (all_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'all requested in reply ' + reply.id
+                    print reply.author + 'is greedy'
 
                     reply.reply(all_reply)
 
@@ -105,23 +107,12 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id + '\n')
 
-            if ('human' in reply.body.lower() and reply.id not in comments_replied_to):
-
-                print 'heretic found!'
-
-                reply.reply(humangirl_reply)
-
-                comments_replied_to.append(reply.id)
-
-                with open('comments_replied_to.txt', 'a') as f:
-                    f.write(reply.id+ '\n')
-
 ##requests for specific mimis.
 
-            for bunnygirl_trigger in ['bunnygirl', 'bunny girl', 'bunbun', 'bunny', 'bunnies', 'usagi', 'usamimi']:
+            for bunnygirl_trigger in ['bunny', 'bunbun', 'bunny', 'bunnies', 'usagi', 'usamimi']:
                 if (bunnygirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'bunnygirl requested in reply ' + reply.id
+                    print 'usagi requested in reply ' + reply.id
 
                     reply.reply(bunnygirl_reply)
 
@@ -130,10 +121,10 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for catgirl_trigger in ['catgirl', 'cat girl', 'nya', 'neko']:
+            for catgirl_trigger in ['cat' 'nya', 'neko']:
                 if (catgirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'catgirl requested in reply ' + reply.id
+                    print 'neko requested in reply ' + reply.id
 
                     reply.reply(catgirl_reply)
 
@@ -142,10 +133,10 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for doggirl_trigger in ['doggirl', 'dog girl', 'inu', 'wanwan', 'wan wan']:
+            for doggirl_trigger in ['dog', 'inu', 'wan']:
                 if (doggirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'doggirl requested in reply ' + reply.id
+                    print 'inu requested in reply ' + reply.id
 
                     reply.reply(doggirl_reply)
 
@@ -154,10 +145,10 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for foxgirl_trigger in ['foxgirl', 'fox girl', 'kitsune', 'kon kon']:
+            for foxgirl_trigger in ['fox', 'kitsune', 'kon']:
                 if (foxgirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'foxgirl requested in reply ' + reply.id
+                    print 'kitsune requested in reply ' + reply.id
 
                     reply.reply(foxgirl_reply)
 
@@ -166,10 +157,10 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for horsegirl_trigger in ['horsegirl', 'horse girl', 'uma', 'hinin']:
+            for horsegirl_trigger in ['horse', 'horse', 'uma', 'hinin']:
                 if (horsegirl_trigger in reply.body.lower() and 'human' not in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'horsegirl requested in reply ' + reply.id
+                    print 'uma requested in reply ' + reply.id
 
                     reply.reply(horsegirl_reply)
 
@@ -178,10 +169,22 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for wolfgirl_trigger in ['wolfgirl', 'wolf girl', 'awoo', 'ookami']:
+            for raccoongril_trigger in ['raccoon', 'racoon', 'raccon', 'racon', 'tanuki', 'tanukimimi', 'dokodon', 'don don', 'dondon']:
+                if (raccoongril_trigger in reply.body.lower() and reply.id not in comments_replied_to):
+
+                    print 'tanuki requested in reply' + reply.id
+
+                    reply.reply(raccoongirl_reply)
+
+                    comments_replied_to.append(reply.id)
+
+                    with open('comments_replied_to.txt', 'a') as f:
+                        f.write(reply.id+ '\n')
+
+            for wolfgirl_trigger in ['wolf', 'awoo', 'ookami']:
                 if (wolfgirl_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'wolfgirl requested in reply ' + reply.id
+                    print 'ookami requested in reply ' + reply.id
 
                     reply.reply(wolfgirl_reply)
 
