@@ -21,14 +21,12 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 		catgirls = replies.catgirls,
 		doggirls = replies.doggirls,
 		foxgirls = replies.foxgirls,
-		horsegirls = replies.horsegirls,
         raccoongirls = replies.raccoongirls,
 		wolfgirls = replies.wolfgirls,
 		bunnygirl_reply = replies.bunnygirl_reply,
 		catgirl_reply = replies.catgirl_reply,
 		doggirl_reply = replies.doggirl_reply,
 		foxgirl_reply = replies.foxgirl_reply,
-		horsegirl_reply = replies.horsegirl_reply,
         raccoongirl_reply = replies.raccoongirl_reply,
 		wolfgirl_reply = replies.wolfgirl_reply,
 		replies = replies.replies,
@@ -38,14 +36,12 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 	# print catgirls
 	# print doggirls
 	# print foxgirls
-	# print horsegirls
     # print racoongirls
 	# print wolfgirls
 	# print bunnygirl_reply
 	# print catgirl_reply
 	# print doggirl_reply
 	# print foxgirl_reply
-	# print horsegirl_reply
 	# print wolfgirl_reply
 	# print replies
 	# print all_reply
@@ -53,13 +49,13 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 
 ##defines things for later.
     
-    subreddits = r.subreddit('kemonomimicheerupbot+anime_irl+animemes+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi+moescape+gunime')
+    subreddits = r.subreddit('kemonomimicheerupbot+anime_irl+animemes+goodanimemes+kemonomimi+nekomimi+kitsunemimi+ookamimi+usagimimi+moescape+gunime+hentaimemes')
 
     # subreddits = r.subreddit('kemonomimicheerupbot')
 
     exiled = r.subreddit('anime')
 
-    trigger_phrases = ['im sad', 'im so sad', "i'm sad", "i'm so sad", 'i am sad', 'i am so sad', 'cheer me up', 'cheer him up', 'cheer her up', 'cheer them up']
+    trigger_phrases = ['im sad', 'im so sad', "i'm sad", "i'm so sad", 'i am sad', 'i am so sad', 'cheer me up', 'cheer him up', 'cheer her up', 'cheer them up', 'cheered up']
 
     ignored_users = [r.user.me(), 'thiscatmightcheeryou', 'sneakpeekbot', '2400gbot']
 
@@ -83,7 +79,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                 with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id + '\n')
 
-            for lewd_trigger in ['lewd', 'ecchi']:
+            for lewd_trigger in ['lewd', 'ecchi', 'hentai']:
                 if (lewd_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
                     print 'Ecchi baka found'
@@ -98,7 +94,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
             for all_trigger in ['all ', 'one of each', 'not enough']:
                 if (all_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print reply.author + 'is greedy'
+                    print 'all requested in ' + reply.id
 
                     reply.reply(all_reply)
 
@@ -157,22 +153,10 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(reply.id+ '\n')
 
-            for horsegirl_trigger in ['horse', 'horse', 'uma', 'hinin']:
-                if (horsegirl_trigger in reply.body.lower() and 'human' not in reply.body.lower() and reply.id not in comments_replied_to):
-
-                    print 'uma requested in reply ' + reply.id
-
-                    reply.reply(horsegirl_reply)
-
-                    comments_replied_to.append(reply.id)
-
-                    with open('comments_replied_to.txt', 'a') as f:
-                        f.write(reply.id+ '\n')
-
             for raccoongril_trigger in ['raccoon', 'racoon', 'raccon', 'racon', 'tanuki', 'tanukimimi', 'dokodon', 'don don', 'dondon']:
                 if (raccoongril_trigger in reply.body.lower() and reply.id not in comments_replied_to):
 
-                    print 'tanuki requested in reply' + reply.id
+                    print 'tanuki requested in reply ' + reply.id
 
                     reply.reply(raccoongirl_reply)
 
@@ -197,7 +181,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 
             if ('good bot' in reply.body.lower() and reply.id not in comments_replied_to):
 
-                #print 'Good bot found in reply ' + reply.id
+                print 'Good bot found in reply ' + reply.id
 
                 reply.reply('[Thank You! :)](https://i.imgur.com/P3GRavv.gifv)')
 
@@ -221,7 +205,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 
 ##checks comments in above listed subreddit for triggers
 
-#print 'Searching last 25 comments...'
+    # print 'Searching last 25 comments...'
 
     for comment in subreddits.comments(limit=50):
         for trigger in (trigger_phrases):
@@ -242,7 +226,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
 
 #checks inbox mentions for triggers
 
-#print 'searching mentions...'
+    # print 'searching mentions...'
 
     for mention in r.inbox.mentions(limit=5):
         for trigger in (trigger_phrases):
@@ -260,7 +244,7 @@ def run_bot(r, bunnygirls = replies.bunnygirls,
                     with open('comments_replied_to.txt', 'a') as f:
                         f.write(mention.id + '\n')
     
-#print 'Time for a cat-nap!...'
+    # print 'Time for a cat-nap!...'
 
     time.sleep(60)
 

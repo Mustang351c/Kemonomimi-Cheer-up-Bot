@@ -106,22 +106,6 @@ foxgirls = ['https://imgur.com/H4mguan',
 							'http://cdn.awwni.me/1409o.jpg',
 							'https://cdn.discordapp.com/attachments/403050477840760832/491800635457667073/image2_1.jpg']
 
-horsegirls = ['https://imgur.com/1CqzgSv',
-								'https://imgur.com/3QH5jrf',
-								'https://imgur.com/Oo5wr5A',
-								'https://imgur.com/QCkGuEd',
-								'https://imgur.com/Zo7ajyb',
-								'https://imgur.com/MDl4h79',
-								'https://imgur.com/ohgI6Hp',
-								'https://imgur.com/BNItYCx',
-								'https://imgur.com/OYsMnzO',
-								'https://imgur.com/JdEVtoF',
-								'https://imgur.com/pfQSfZo',
-								'https://imgur.com/TmG43mJ',
-								'https://imgur.com/htzSkKt',
-								'https://imgur.com/xQecv9u',
-								'https://imgur.com/fJytgLU']
-
 raccoongirls = ['https://cdn.discordapp.com/attachments/403050477840760832/726040871061159947/15931720134606432984084757995522.jpg',
 								'https://cdn.discordapp.com/attachments/403050477840760832/726041020114010132/15931720639413141832262686302986.jpg',
 								'https://cdn.discordapp.com/attachments/403050477840760832/726041071607480380/15931720773152536483211048539783.jpg',
@@ -203,7 +187,11 @@ bunnygirl_reply = ('[Here](' + random.choice(bunnygirls) + ') is a '
 											'\n\n'
 											'---'
 											'\n\n'
-											'Did you want a catgirl, doggirl, foxgirl, horsegirl, raccoongirl, or wolfgirl? Just reply saying so. '
+											'Looking for fellow degenerates? [You can find them here.](https://discord.gg/XKfns8fpVZ)'
+											'\n\n'
+											'---'
+											'\n\n'
+											'Did you want a catgirl, doggirl, foxgirl, raccoongirl, or wolfgirl? Just reply saying so. '
 											'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
 catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
@@ -211,7 +199,11 @@ catgirl_reply = ('[Here](' + random.choice(catgirls) + ') is a '
 											'\n\n'
 											'---'
 											'\n\n'
-											'Did you want a bunnygirl, doggirl, foxgirl, horsegirl, raccoongirl, or wolfgirl? Just reply saying so. '
+											'Looking for fellow degenerates? [You can find them here.](https://discord.gg/XKfns8fpVZ)'
+											'\n\n'
+											'---'
+											'\n\n'
+											'Did you want a bunnygirl, doggirl, foxgirl, raccoongirl, or wolfgirl? Just reply saying so. '
 											'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
 doggirl_reply = ('[Here](' + random.choice(doggirls) + ') is a '
@@ -219,7 +211,11 @@ doggirl_reply = ('[Here](' + random.choice(doggirls) + ') is a '
 											'\n\n'
 											'---'
 											'\n\n'
-											'Did you want a bunnygirl, catgirl, foxgirl, horsegirl, raccoongirl, or wolfgirl? Just reply saying so. '
+											'Looking for fellow degenerates? [You can find them here.](https://discord.gg/XKfns8fpVZ)'
+											'\n\n'
+											'---'
+											'\n\n'
+											'Did you want a bunnygirl, catgirl, foxgirl, raccoongirl, or wolfgirl? Just reply saying so. '
 											'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
 foxgirl_reply = ('[Here](' + random.choice(foxgirls) + ') is a '
@@ -227,19 +223,19 @@ foxgirl_reply = ('[Here](' + random.choice(foxgirls) + ') is a '
 											'\n\n'
 											'---'
 											'\n\n'
-											'Did you want a bunnygirl, catgirl, doggirl, horsegirl, raccoongirl, or wolfgirl? Just reply saying so. '
-											'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
-
-horsegirl_reply = ('[Here](' + random.choice(horsegirls) + ') is a '
-											'picture of an umamimi! Hihin! hopefully this will cheer you up!'
+											'Looking for fellow degenerates? [You can find them here.](https://discord.gg/XKfns8fpVZ)'
 											'\n\n'
 											'---'
 											'\n\n'
-											'Did you want a bunnygirl, catgirl, doggirl, foxgirl, raccoongirl, or wolfgirl? Just reply saying so. '
+											'Did you want a bunnygirl, catgirl, doggirl, raccoongirl, or wolfgirl? Just reply saying so. '
 											'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
 raccoongirl_reply = ('[Here](' + random.choice(raccoongirls) + ') is a '
 											'picture of a tanukimimi! Dokodon! hopefully this will cheer you up!'
+											'\n\n'
+											'---'
+											'\n\n'
+											'Looking for fellow degenerates? [You can find them here.](https://discord.gg/XKfns8fpVZ)'
 											'\n\n'
 											'---'
 											'\n\n'
@@ -251,16 +247,19 @@ wolfgirl_reply = ('[Here](' + random.choice(wolfgirls) + ') is a '
 											'\n\n'
 											'---'
 											'\n\n'
-											'Did you want a bunnygirl, catgirl, doggirl, or foxgirl, horsegirl, or raccoongirl? Just reply saying so. '
+											'Looking for fellow degenerates? [You can find them here.](https://discord.gg/XKfns8fpVZ)'
+											'\n\n'
+											'---'
+											'\n\n'
+											'Did you want a bunnygirl, catgirl, doggirl, or foxgirl, or raccoongirl? Just reply saying so. '
 											'I am a bot. For more info on me and how to use me, see r/KemonomimiCheerUpBot')
 
-replies = [bunnygirl_reply, catgirl_reply, doggirl_reply, foxgirl_reply, horsegirl_reply, wolfgirl_reply]
+replies = [bunnygirl_reply, catgirl_reply, doggirl_reply, foxgirl_reply, raccoongirl_reply, wolfgirl_reply]
 
 all_reply = ('Here is an [usagimimi](' + random.choice(bunnygirls) + 
 											'), a [nekomimi](' + random.choice(catgirls) +
 											'), an [inumimi](' + random.choice(doggirls) +
 											'), a [kitsunemimi](' + random.choice(foxgirls) +
-											'), an [umamimi](' + random.choice(horsegirls) +
 											'), a [tanukimimi](' + random.choice(raccoongirls) + '), **AND** '
 											'an [ookamimi](' + random.choice(wolfgirls) + ')!! '
 											'Hopefully this will cheer you up more!')
